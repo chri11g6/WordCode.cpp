@@ -3,11 +3,6 @@
 #include <random>
 #include <cstring>
 
-string str_toupper(string s) {
-    transform(s.begin(), s.end(), s.begin(), [](unsigned char c){ return std::toupper(c); });
-
-    return s;
-}
 
 WordCode::WordCode(){
     this->LoadData();
@@ -118,9 +113,11 @@ void WordCode::Start(){
 
 // Tjekker om key er OK
 bool WordCode::keyIs(string key){
-    string xKey = str_toupper(key);
+    string xKey = key;
 
-    return xKey == this->xWord;
+	transform(xKey.begin(), xKey.end(), xKey.begin(), ::toupper);
+
+	return xKey == this->xWord;
 }
 
 // Finder key

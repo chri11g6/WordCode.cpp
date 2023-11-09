@@ -17,18 +17,19 @@ int main(){
 
 	bool KeyIsFind = false;
 
-	do{
+	// do{
 		cout << "\nKey: ";
-		cin >> key;
+		getline(cin, key);
 		KeyIsFind = Game.keyIs(key);
 
 		if(KeyIsFind){
 			cout << "\nKey is found!\n";
 		}else{
 			cout << "\n!!Key is not found!!\n";
+			return 1;
 		}
 
-	}while(!KeyIsFind);
+	// }while(!KeyIsFind);
 
 
 	return 0;
