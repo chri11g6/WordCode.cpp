@@ -1,0 +1,1 @@
+g++ MyDisplay.cpp WordCode.cpp main.cpp -o WordCode
